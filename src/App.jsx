@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 
 // ✅ Import missing components
 import Navbar from './Components/Navbar'; // <-- Adjust path as needed
-import Footer from './components/Footer'; // <-- Adjust path as needed
+import Footer from './Components/Footer'; // <-- Adjust path as needed
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path='/footer' element={<Footer/>}/>
         </Routes>
       </main>
       
