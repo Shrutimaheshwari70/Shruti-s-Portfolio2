@@ -32,14 +32,46 @@ function About() {
   };
 
   const technologies = [
-    { icon: <FaHtml5 className="text-3xl text-orange-500" />, name: "HTML5" },
-    { icon: <FaCss3Alt className="text-3xl text-blue-500" />, name: "CSS3" },
-    { icon: <SiJavascript className="text-3xl text-yellow-400" />, name: "JavaScript" },
-    { icon: <FaReact className="text-3xl text-cyan-400" />, name: "React" },
-    { icon: <SiTailwindcss className="text-3xl text-teal-400" />, name: "Tailwind" },
-    { icon: <FaNodeJs className="text-3xl text-green-500" />, name: "Node.js" },
-    { icon: <SiExpress className="text-3xl text-gray-300" />, name: "Express" },
-    { icon: <SiMongodb className="text-3xl text-green-600" />, name: "MongoDB" },
+    { 
+      icon: <FaHtml5 className="text-3xl text-orange-500" />, 
+      name: "HTML5", 
+      link: "https://developer.mozilla.org/en-US/docs/Web/HTML" 
+    },
+    { 
+      icon: <FaCss3Alt className="text-3xl text-blue-500" />, 
+      name: "CSS3", 
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS" 
+    },
+    { 
+      icon: <SiJavascript className="text-3xl text-yellow-400" />, 
+      name: "JavaScript", 
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
+    },
+    { 
+      icon: <FaReact className="text-3xl text-cyan-400" />, 
+      name: "React.js", 
+      link: "https://reactjs.org/docs/getting-started.html" 
+    },
+    { 
+      icon: <SiTailwindcss className="text-3xl text-teal-400" />, 
+      name: "Tailwind", 
+      link: "https://tailwindcss.com/docs" 
+    },
+    { 
+      icon: <FaNodeJs className="text-3xl text-green-500" />, 
+      name: "Node.js", 
+      link: "https://nodejs.org/en/docs/" 
+    },
+    { 
+      icon: <SiExpress className="text-3xl text-gray-300" />, 
+      name: "Express.js", 
+      link: "https://www.geeksforgeeks.org/node-js/express-js/" 
+    },
+    { 
+      icon: <SiMongodb className="text-3xl text-green-600" />, 
+      name: "MongoDB", 
+      link: "https://www.w3schools.com/mongodb/" 
+    },
   ];
 
   return (
@@ -144,11 +176,14 @@ function About() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
           >
             {technologies.map((tech, index) => (
-              <motion.div
+              <motion.a
                 key={index}
+                href={tech.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={fadeUp}
                 whileHover={{ y: -10, scale: 1.05 }}
-                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
+                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer inline-block"
               >
                 <div className="flex flex-col items-center space-y-3">
                   <div className="group-hover:scale-110 transition-transform duration-300">
@@ -158,7 +193,7 @@ function About() {
                     {tech.name}
                   </span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </motion.div>
         </motion.div>

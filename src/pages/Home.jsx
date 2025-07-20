@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import profileImage from '../assets/profile.jpg';
+
+// Importing components and forwarding refs
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
-import profileImage from '../assets/profile.jpg';
 
 function Home() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   // Refs for scroll
+  const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -21,6 +24,10 @@ function Home() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const scrollToProjects = () => {
     projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -139,7 +146,7 @@ function Home() {
             variants={itemVariants}
             className="mt-20 flex gap-6 flex-wrap justify-center"
           >
-            {['React', 'Next.js', 'Framer Motion', 'Tailwind CSS', 'Express.js'].map((tech) => (
+            {['React.js', 'Node.js', 'Bootstrap', 'Tailwind CSS','Javascript', 'Express.js'].map((tech) => (
               <motion.span
                 key={tech}
                 whileHover={{ y: -5 }}
@@ -169,13 +176,25 @@ function Home() {
         </motion.div>
       </div>
 
-      {/* Sections with refs */}
+      {/* Sections with refs inside */}
+      <div ref={aboutRef}>
+        <div style={{ scrollMarginTop: '100px' }}>
+          <About />
+        </div>
+      </div>
+
       <div ref={projectsRef}>
-        <Projects />
+        <div style={{ scrollMarginTop: '100px' }}>
+          <Projects />
+        </div>
       </div>
+
       <div ref={contactRef}>
-        <Contact />
+        <div style={{ scrollMarginTop: '100px' }}>
+          <Contact />
+        </div>
       </div>
+
     </div>
   );
 }
