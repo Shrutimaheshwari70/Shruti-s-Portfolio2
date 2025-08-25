@@ -3,19 +3,14 @@ import React from 'react';
 function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
-  ];
+  // Removed quickLinks array since we won't use it now
 
   const services = [
     'Web Development',
     'Frontend Development',
     'Backend Development',
     'Full Stack Solutions',
-    'Mern Stack development'
+    'Mern Stack Development'
   ];
 
   const socialLinks = [
@@ -34,15 +29,6 @@ function Footer() {
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577V20.41c-3.338.726-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.239 1.84 1.239 1.07 1.833 2.807 1.303 3.492.996.108-.775.418-1.305.762-1.604C6.07 16.218 3.27 15.188 3.27 10.59c0-1.31.468-2.38 1.236-3.219-.124-.303-.536-1.523.117-3.175 0 0 1.009-.322 3.302 1.23a11.52 11.52 0 0 1 6.003 0c2.292-1.552 3.301-1.23 3.301-1.23.653 1.652.241 2.872.118 3.175.77.839 1.235 1.909 1.235 3.219 0 4.609-2.807 5.625-5.479 5.922.43.371.823 1.101.823 2.221v3.293c0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z" />
-        </svg>
-      )
-    },
-    {
-      name: 'Instagram',
-      href: 'https://www.instagram.com/shhh.ruti._?igsh=MXIzazlhYTQ3aHd6Mg==',
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
-          <path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.4-115-115-115zm0 190.6c-41.8 0-75.6-33.8-75.6-75.6s33.8-75.6 75.6-75.6 75.6 33.8 75.6 75.6-33.8 75.6-75.6 75.6zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-93-26.3-26.3-57.6-34.5-93-36.2C293.7 32 258.4 32 224 32s-69.7 0-93 .3c-35.3 1.7-66.7 9.9-93 36.2S3.7 112.7 2 148.1C1.6 171.1 1.6 202.4 1.6 224s0 52.9.3 75.9c1.7 35.3 9.9 66.7 36.2 93s57.6 34.5 93 36.2c23 .3 47.5.3 70.4.3s47.4 0 70.4-.3c35.3-1.7 66.7-9.9 93-36.2 26.3-26.3 34.5-57.6 36.2-93 .3-23 .3-47.5.3-70.4s0-47.4-.3-70.4z" />
         </svg>
       )
     },
@@ -71,7 +57,7 @@ function Footer() {
       <footer className="bg-black text-white relative overflow-hidden">
         <div className="border-t border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
               {/* Brand Section */}
               <div className="lg:col-span-1">
                 <div className="mb-6">
@@ -102,29 +88,8 @@ function Footer() {
                 </div>
               </div>
 
-              {/* Quick Links */}
-              <div>
-                <h4 className="text-lg font-semibold mb-6 relative">
-                  Quick Links
-                  <div className="w-8 h-0.5 bg-gray-300 mt-2 rounded-full"></div>
-                </h4>
-                <ul className="space-y-3">
-                  {quickLinks.map((link, index) => (
-                    <li key={index}>
-                      <a
-                        href={link.href}
-                        className="text-gray-300 hover:text-white transition-colors duration-300 text-sm flex items-center group"
-                      >
-                        <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               {/* Services */}
-              <div>
+              <div className="lg:col-span-1">
                 <h4 className="text-lg font-semibold mb-6 relative">
                   Services
                   <div className="w-8 h-0.5 bg-gray-300 mt-2 rounded-full"></div>
@@ -142,7 +107,7 @@ function Footer() {
               </div>
 
               {/* Contact Info */}
-              <div>
+              <div className="lg:col-span-1">
                 <h4 className="text-lg font-semibold mb-6 relative">
                   Get In Touch
                   <div className="w-8 h-0.5 bg-gray-300 mt-2 rounded-full"></div>

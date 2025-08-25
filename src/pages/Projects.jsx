@@ -57,14 +57,14 @@ const Projects = forwardRef((props, ref) => {
     },
     {
       id: 6,
-      title: "Adventure Project",
-      description: "Adventure is an exciting experience involving exploration, challenges, or travel beyond the ordinary and expected.",
-      tags: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "GSAP"],
+      title: "Hisaab-kitab",
+      description: "A simple and lightweight expense tracking web app built using Node.js, Express, and EJS. It allows users to create, edit, view, and delete daily expense records in a clean and minimal interface. Perfect for managing personal or household accounts quickly.",
+      tags: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript" ,"ejs","espress.js","node.js"],
       image: "/images/project6.png",
-      codeUrl: "https://github.com/yourusername/task-manager",
-      liveDemoUrl: "https://adventure-website02.netlify.app/",
+      codeUrl: "https://github.com/Shrutimaheshwari70/Hisab-kitab",
+      liveDemoUrl: "https://hisab-kitab-4rvx.onrender.com",
       gradient: "from-emerald-500 to-lime-500"
-    }
+    },
   ];
 
   const containerVariants = {

@@ -1,23 +1,27 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
+
 import {
-  FaHtml5, FaCss3Alt, FaReact, FaNodeJs
-} from 'react-icons/fa';
-import {
-  SiTailwindcss, SiExpress, SiMongodb, SiJavascript
-} from 'react-icons/si';
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiJavascript,
+  SiBootstrap, 
+  SiPython,
+} from "react-icons/si";
 
 // ✅ Profile image import
-import profileImg from '../assets/profile.jpg';
+import profileImg from "../assets/profile.jpg";
 
 function About() {
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const container = {
@@ -26,51 +30,61 @@ function About() {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const technologies = [
-    { 
-      icon: <FaHtml5 className="text-3xl text-orange-500" />, 
-      name: "HTML5", 
-      link: "https://developer.mozilla.org/en-US/docs/Web/HTML" 
+    {
+      icon: <FaHtml5 className="text-3xl text-orange-500" />,
+      name: "HTML5",
+      link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     },
-    { 
-      icon: <FaCss3Alt className="text-3xl text-blue-500" />, 
-      name: "CSS3", 
-      link: "https://developer.mozilla.org/en-US/docs/Web/CSS" 
+    {
+      icon: <FaCss3Alt className="text-3xl text-blue-500" />,
+      name: "CSS3",
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
-    { 
-      icon: <SiJavascript className="text-3xl text-yellow-400" />, 
-      name: "JavaScript", 
-      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
+    {
+      icon: <SiJavascript className="text-3xl text-yellow-400" />,
+      name: "JavaScript",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
-    { 
-      icon: <FaReact className="text-3xl text-cyan-400" />, 
-      name: "React.js", 
-      link: "https://reactjs.org/docs/getting-started.html" 
+    {
+      icon: <FaReact className="text-3xl text-cyan-400" />,
+      name: "React.js",
+      link: "https://reactjs.org/docs/getting-started.html",
     },
-    { 
-      icon: <SiTailwindcss className="text-3xl text-teal-400" />, 
-      name: "Tailwind", 
-      link: "https://tailwindcss.com/docs" 
+    {
+      icon: <SiTailwindcss className="text-3xl text-teal-400" />,
+      name: "Tailwind",
+      link: "https://tailwindcss.com/docs",
     },
-    { 
-      icon: <FaNodeJs className="text-3xl text-green-500" />, 
-      name: "Node.js", 
-      link: "https://nodejs.org/en/docs/" 
+    {
+      icon: <SiBootstrap className="text-3xl text-purple-600" />,
+      name: "Bootstrap",
+      link: "https://getbootstrap.com/",
     },
-    { 
-      icon: <SiExpress className="text-3xl text-gray-300" />, 
-      name: "Express.js", 
-      link: "https://www.geeksforgeeks.org/node-js/express-js/" 
+    {
+      icon: <FaNodeJs className="text-3xl text-green-500" />,
+      name: "Node.js",
+      link: "https://nodejs.org/en/docs/",
     },
-    { 
-      icon: <SiMongodb className="text-3xl text-green-600" />, 
-      name: "MongoDB", 
-      link: "https://www.w3schools.com/mongodb/" 
+    {
+      icon: <SiExpress className="text-3xl text-gray-300" />,
+      name: "Express.js",
+      link: "https://www.geeksforgeeks.org/node-js/express-js/",
+    },
+    {
+      icon: <SiMongodb className="text-3xl text-green-600" />,
+      name: "MongoDB",
+      link: "https://www.w3schools.com/mongodb/",
+    },
+    {
+      icon: <SiPython className="text-3xl text-yellow-500" />,
+      name: "Python",
+      link: "https://www.w3schools.com/python/",
     },
   ];
 
@@ -81,20 +95,23 @@ function About() {
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={container}
           className="text-center mb-20"
         >
-          <motion.h2 
+          <motion.h2
             variants={fadeUp}
             className="text-5xl md:text-6xl font-bold mb-4"
           >
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Me</span>
+            About{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+              Me
+            </span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             variants={fadeUp}
             className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-500 mx-auto rounded-full"
           />
@@ -112,11 +129,11 @@ function About() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"></div>
-              
+
               <div className="relative w-72 h-72 rounded-full overflow-hidden border-2 border-white/20 bg-gradient-to-br background-black to-gray-900">
-                <img 
-                  src={profileImg} 
-                  alt="Profile" 
+                <img
+                  src={profileImg}
+                  alt="Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -134,16 +151,20 @@ function About() {
             <h3 className="text-4xl md:text-5xl font-bold">
               Hi, I'm <span className="text-purple-400">Shruti Maheshwari</span>
             </h3>
-            
+
             <p className="text-xl text-gray-300 leading-relaxed">
-              A passionate <span className="text-cyan-400 font-semibold">MERN Stack Developer</span> who 
-              loves creating beautiful, responsive web applications. I enjoy turning complex problems 
-              into simple, elegant solutions.
+              A passionate{" "}
+              <span className="text-cyan-400 font-semibold">
+                MERN Stack Developer
+              </span>{" "}
+              who loves creating beautiful, responsive web applications. I enjoy
+              turning complex problems into simple, elegant solutions.
             </p>
-            
+
             <p className="text-lg text-gray-400 leading-relaxed">
-              I specialize in modern web technologies and have a keen eye for clean UI design. 
-              When I'm not coding, I'm exploring new frameworks and perfecting my craft.
+              I specialize in modern web technologies and have a keen eye for
+              clean UI design. When I'm not coding, I'm exploring new frameworks
+              and perfecting my craft.
             </p>
 
             <motion.button
@@ -164,14 +185,17 @@ function About() {
           variants={container}
           className="text-center"
         >
-          <motion.h3 
+          <motion.h3
             variants={fadeUp}
             className="text-3xl md:text-4xl font-bold mb-12"
           >
-            Technologies I <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Work With</span>
+            Technologies I{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+              Work With
+            </span>
           </motion.h3>
 
-          <motion.div 
+          <motion.div
             variants={container}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
           >
