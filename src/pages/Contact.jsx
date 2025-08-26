@@ -11,7 +11,8 @@ function Contact() {
   const [messages, setMessages] = useState([]);
 
   // ✅ Apna deployed backend URL
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "https://hisab-kitab-2.onrender.com";
+
   // Input change handler
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

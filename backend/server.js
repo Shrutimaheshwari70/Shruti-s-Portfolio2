@@ -9,10 +9,15 @@ const app = express();
 // ✅ CORS allow for local and deployed frontend
 app.use(
   cors({
-    origin: 'http://localhost:5173',
-    methods: ['GET', 'POST']
+    origin: [
+      'http://localhost:5173',                 // Local frontend
+      'https://hisab-kitab-2.onrender.com'  // Deployed frontend
+    ],
+    methods: ['GET', 'POST'],
+    credentials: true
   })
 );
+
 
 // JSON middleware
 app.use(express.json());
