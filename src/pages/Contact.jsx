@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,18 +8,22 @@ function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [messages, setMessages] = useState([]);
 
+  // ✅ Apna deployed backend URL
+  const BACKEND_URL = "http://localhost:5000";
+  // Input change handler
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Form submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Backend API endpoint
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -30,6 +34,7 @@ function Contact() {
       if (result.status === "success") {
         alert("✅ Message sent and saved to MongoDB!");
         setFormData({ name: "", email: "", subject: "", message: "" });
+        fetchMessages(); // Refresh messages
       } else {
         alert("❌ Something went wrong. Please try again.");
       }
@@ -40,8 +45,24 @@ function Contact() {
     setIsSubmitting(false);
   };
 
+  // Fetch all messages
+  const fetchMessages = async () => {
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/messages`);
+      const data = await res.json();
+      setMessages(data);
+    } catch (err) {
+      console.error("Error fetching messages:", err);
+    }
+  };
+
+  // On component mount
+  useEffect(() => {
+    fetchMessages();
+  }, []);
+
   return (
-    <section className="bg-black text-white min-h-screen flex items-center justify-center px-4">
+    <section className="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 space-y-12">
       <div className="max-w-2xl w-full lg:w-2/3 bg-gray-900 rounded-2xl p-8 border border-gray-800">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4">
@@ -52,6 +73,7 @@ function Contact() {
           </h2>
         </div>
 
+        {/* Contact Form */}
         <h3 className="text-2xl font-bold mb-6">Send Message</h3>
         <form onSubmit={handleSubmit} className="space-y-6">
           <input
@@ -98,6 +120,24 @@ function Contact() {
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
+      </div>
+
+      {/* Messages List */}
+      <div className="max-w-2xl w-full lg:w-2/3 bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <h3 className="text-2xl font-bold mb-6">All Messages</h3>
+        {messages.length === 0 ? (
+          <p>No messages yet.</p>
+        ) : (
+          messages.map((msg) => (
+            <div key={msg._id} className="border-b border-gray-700 py-3">
+              <p><b>Name:</b> {msg.name}</p>
+              <p><b>Email:</b> {msg.email}</p>
+              <p><b>Subject:</b> {msg.subject}</p>
+              <p><b>Message:</b> {msg.message}</p>
+              <p className="text-gray-400 text-sm">{new Date(msg.date).toLocaleString()}</p>
+            </div>
+          ))
+        )}
       </div>
     </section>
   );
