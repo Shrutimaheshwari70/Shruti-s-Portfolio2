@@ -6,16 +6,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 
-// ✅ CORS allow for local and deployed frontend
-// app.use(
-//   cors({
-//     origin: [
-//       'http://localhost:5173' // local dev
-//       // 'https://hisab-kitab-2.onrender.com' // deployed frontend URL, change accordingly
-//     ],
-//     methods: ['GET', 'POST']
-//   })
-// );
 app.use(cors({
   origin: [
     'http://localhost:5173', // local dev
