@@ -12,7 +12,7 @@ function Contact() {
 
 
   // ✅ Apna deployed backend URL
-const BACKEND_URL = "https://hisab-kitab-2.onrender.com";
+const BACKEND_URL = "http://localhost:5000";
 
 fetch(`${BACKEND_URL}/api/messages`)
   .then(res => res.json())
