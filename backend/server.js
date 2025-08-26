@@ -10,14 +10,12 @@ const app = express();
 app.use(
   cors({
     origin: [
-      'http://localhost:5173',                 // Local frontend
-      'https://hisab-kitab-2.onrender.com'  // Deployed frontend
+      'http://localhost:5173', // local dev
+      'https://hisab-kitab-2.onrender.com' // deployed frontend URL, change accordingly
     ],
-    methods: ['GET', 'POST'],
-    credentials: true
+    methods: ['GET', 'POST']
   })
 );
-
 
 // JSON middleware
 app.use(express.json());
@@ -36,12 +34,15 @@ const messageSchema = new mongoose.Schema({
   message: String,
   date: { type: Date, default: Date.now }
 });
+
 const Message = mongoose.model('Message', messageSchema);
+
+// ✅ Test route
 app.get("/", (req, res) => {
   res.send("Backend running ✅");
 });
 
-// ✅ POST contact
+// ✅ POST contact message
 app.post('/api/contact', async (req, res) => {
   try {
     const newMessage = new Message(req.body);
@@ -61,7 +62,7 @@ app.get('/api/messages', async (req, res) => {
     res.status(500).json({ status: 'error', message: err.message });
   }
 });
+
 // Server start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-

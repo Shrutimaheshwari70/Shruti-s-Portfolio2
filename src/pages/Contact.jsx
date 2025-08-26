@@ -10,8 +10,14 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [messages, setMessages] = useState([]);
 
+
   // ✅ Apna deployed backend URL
-  const BACKEND_URL = "https://hisab-kitab-2.onrender.com";
+const BACKEND_URL = "https://hisab-kitab-2.onrender.com";
+
+fetch(`${BACKEND_URL}/api/messages`)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log('Error fetching messages:', err));
 
   // Input change handler
   const handleChange = (e) => {
