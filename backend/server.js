@@ -16,13 +16,13 @@ const app = express();
 //     methods: ['GET', 'POST']
 //   })
 // );
-
-app.use(
-  cors({
-    origin: 'http://localhost:5173', // local dev frontend
-    methods: ['GET', 'POST']
-  })
-);
+app.use(cors({
+  origin: [
+    'http://localhost:5173', // local dev
+    'https://shruti-s-portfolio2.onrender.com'
+  ],
+  methods: ['GET','POST']
+}));
 // JSON middleware
 app.use(express.json());
 

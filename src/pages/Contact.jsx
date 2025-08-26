@@ -10,14 +10,8 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [messages, setMessages] = useState([]);
 
-
-  // ✅ Apna deployed backend URL
-const BACKEND_URL = "http://localhost:5000";
-
-fetch(`${BACKEND_URL}/api/messages`)
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.log('Error fetching messages:', err));
+  // ✅ Backend URL from .env
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   // Input change handler
   const handleChange = (e) => {
