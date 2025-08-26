@@ -10,8 +10,8 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [messages, setMessages] = useState([]);
 
-  // ✅ Backend URL from .env
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  // ✅ Vite environment variable
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   // Input change handler
   const handleChange = (e) => {
