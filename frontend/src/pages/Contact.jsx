@@ -47,15 +47,27 @@ function Contact() {
   };
 
   // Fetch all messages
-  const fetchMessages = async () => {
-    try {
-      const res = await fetch(`${BACKEND_URL}/api/messages`);
-      const data = await res.json();
-      setMessages(data);
-    } catch (err) {
-      console.error("Error fetching messages:", err);
-    }
-  };
+  // const fetchMessages = async () => {
+  //   try {
+  //     const res = await fetch(`${BACKEND_URL}/api/messages`);
+  //     const data = await res.json();
+  //     setMessages(data);
+  //   } catch (err) {
+  //     console.error("Error fetching messages:", err);
+  //   }
+  // };
+
+  // Fetch all messages
+const fetchMessages = async () => {
+  try {
+    const res = await fetch(`${BACKEND_URL}/api/messages`);
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const data = await res.json();
+    setMessages(data);
+  } catch (err) {
+    console.error("Error fetching messages:", err);
+  }
+};
 
   // On component mount
   useEffect(() => {
