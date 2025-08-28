@@ -62,8 +62,8 @@ const Projects = forwardRef((props, ref) => {
       tags: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript" ,"ejs","espress.js","node.js"],
       image: "/images/project6.png",
       codeUrl: "https://github.com/Shrutimaheshwari70/Hisab-kitab",
-      liveDemoUrl: "https://hisab-kitab-4rvx.onrender.com",
-      gradient: "from-emerald-500 to-lime-500"
+      liveDemoUrl: "https://hisab-kitab-2.onrender.com/",
+      gradient: "from-emerald-500 to-lime-500"  
     },
   ];
 

@@ -29,7 +29,7 @@ function Contact() {
       const result = await response.json();
 
       if (result.status === "success") {
-        alert("✅ Message sent and saved to MongoDB!");
+        alert("Successfully");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         alert("❌ Something went wrong. Please try again.");
