@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     'http://localhost:5173', // Vite dev server
-    'https://shruti-s-portfolio2-1.onrender.com' // Frontend hosted
+    'https://fr-pqbo.onrender.com' // Frontend hosted
   ]
 }));
 
