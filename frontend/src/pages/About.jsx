@@ -1,15 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub, FaGitAlt } from "react-icons/fa";
 
 import {
   SiTailwindcss,
   SiExpress,
   SiMongodb,
   SiJavascript,
-  SiBootstrap, 
+  SiBootstrap,
   SiPython,
 } from "react-icons/si";
+import { SiGreensock } from "react-icons/si"; // ✅ GSAP icon
 
 // ✅ Profile image import
 import profileImg from "../assets/profile.jpg";
@@ -35,17 +36,8 @@ function About() {
     },
   };
 
+  // ✅ Ordered technologies
   const technologies = [
-    {
-      icon: <FaHtml5 className="text-3xl text-orange-500" />,
-      name: "HTML5",
-      link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    },
-    {
-      icon: <FaCss3Alt className="text-3xl text-blue-500" />,
-      name: "CSS3",
-      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-    },
     {
       icon: <SiJavascript className="text-3xl text-yellow-400" />,
       name: "JavaScript",
@@ -57,14 +49,9 @@ function About() {
       link: "https://reactjs.org/docs/getting-started.html",
     },
     {
-      icon: <SiTailwindcss className="text-3xl text-teal-400" />,
-      name: "Tailwind",
-      link: "https://tailwindcss.com/docs",
-    },
-    {
-      icon: <SiBootstrap className="text-3xl text-purple-600" />,
-      name: "Bootstrap",
-      link: "https://getbootstrap.com/",
+      icon: <SiGreensock className="text-3xl text-green-400" />,
+      name: "GSAP",
+      link: "https://greensock.com/gsap/",
     },
     {
       icon: <FaNodeJs className="text-3xl text-green-500" />,
@@ -74,12 +61,47 @@ function About() {
     {
       icon: <SiExpress className="text-3xl text-gray-300" />,
       name: "Express.js",
-      link: "https://www.geeksforgeeks.org/node-js/express-js/",
+      link: "https://expressjs.com/",
+    },
+    {
+      icon: <SiJavascript className="text-3xl text-red-400" />,
+      name: "RESTful API",
+      link: "https://restfulapi.net/",
     },
     {
       icon: <SiMongodb className="text-3xl text-green-600" />,
       name: "MongoDB",
-      link: "https://www.w3schools.com/mongodb/",
+      link: "https://www.mongodb.com/docs/",
+    },
+    {
+      icon: <FaGitAlt className="text-3xl text-orange-500" />,
+      name: "Git",
+      link: "https://git-scm.com/doc",
+    },
+    {
+      icon: <FaGithub className="text-3xl text-white" />,
+      name: "GitHub",
+      link: "https://docs.github.com/",
+    },
+        {
+      icon: <FaHtml5 className="text-3xl text-orange-500" />,
+      name: "HTML5",
+      link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      icon: <FaCss3Alt className="text-3xl text-blue-500" />,
+      name: "CSS3",
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    },
+    {
+      icon: <SiTailwindcss className="text-3xl text-teal-400" />,
+      name: "Tailwind CSS",
+      link: "https://tailwindcss.com/docs",
+    },
+    {
+      icon: <SiBootstrap className="text-3xl text-purple-600" />,
+      name: "Bootstrap",
+      link: "https://getbootstrap.com/",
     },
     {
       icon: <SiPython className="text-3xl text-yellow-500" />,

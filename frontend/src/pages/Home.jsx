@@ -91,10 +91,10 @@ function Home() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-6xl font-bold mb-4 text-center text-white"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center text-white"
           >
             Hello, I'm{" "}
-            <span className="inline-flex flex-wrap gap-1 justify-center">
+            <span className="inline-flex whitespace-nowrap justify-center">
               {[..."Shruti Maheshwari"].map((char, i) => (
                 <motion.span
                   key={i}
@@ -119,7 +119,7 @@ function Home() {
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-xl md:text-2l text-gray-300 mb-8 max-w-2xl">
-            I'm a MERN Stack Developer crafting powerful, responsive, and accessible web applications using MongoDB, Express.js, React, and Node.js. I transform ideas into scalable digital solutions with clean UI and seamless user experience.
+            I'm a MERN Stack Developer crafting powerful, responsive, and accessible web applications using MongoDB, Express.js, React, and Node.js.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex gap-4">
@@ -146,7 +146,7 @@ function Home() {
             variants={itemVariants}
             className="mt-20 flex gap-6 flex-wrap justify-center"
           >
-            {['React.js', 'Node.js', 'Bootstrap', 'Tailwind CSS','Javascript', 'Express.js'].map((tech) => (
+            {['React.js','Javascript', 'Node.js', 'Express.js','Mongodb', 'Bootstrap', 'Tailwind CSS'].map((tech) => (
               <motion.span
                 key={tech}
                 whileHover={{ y: -5 }}
