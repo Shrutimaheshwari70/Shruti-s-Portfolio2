@@ -68,16 +68,16 @@ const Projects = forwardRef((props, ref) => {
       liveDemoUrl: "https://e-commerce-fullstack-1-7lha.onrender.com/",
       gradient: "from-red-500 to-pink-500",
     },
-      {
-      id: 6,
-      title: "Adventure Project",
-      description: "Adventure is an exciting experience involving exploration, challenges, or travel beyond the ordinary and expected.",
-      tags: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "GSAP"],
-      image: "/images/project6.png",
-      codeUrl: "https://github.com/yourusername/task-manager",
-      liveDemoUrl: "https://adventure-shruti.vercel.app",
-      gradient: "from-emerald-500 to-lime-500"
-    }
+    //   {
+    //   id: 6,
+    //   title: "Adventure Project",
+    //   description: "Adventure is an exciting experience involving exploration, challenges, or travel beyond the ordinary and expected.",
+    //   tags: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "GSAP"],
+    //   image: "/images/project6.png",
+    //   codeUrl: "https://github.com/yourusername/task-manager",
+    //   liveDemoUrl: "https://adventure-shruti.vercel.app",
+    //   gradient: "from-emerald-500 to-lime-500"
+    // }
   ];
 
   const containerVariants = {
