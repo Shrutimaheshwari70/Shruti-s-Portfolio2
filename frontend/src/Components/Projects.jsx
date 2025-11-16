@@ -71,7 +71,7 @@ const Projects = forwardRef((props, ref) => {
       title: "E-commerce App",
       description:
         "A full-featured E-commerce web application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js).",
-      tags: ["React.js","Mongodb","Express.js","Node.js","cloudinary","Multer" "Payment Gateway","HTML5", "Tailwind CSS", "JavaScript"],
+      tags: ["React.js","Mongodb","Express.js","Node.js","cloudinary","Multer","Payment Gateway","HTML5", "Tailwind CSS", "JavaScript"],
       image: "/images/project - 7.png",
       codeUrl: "https://github.com/Shrutimaheshwari70/e-commerce-fullstack.git",
       liveDemoUrl: "https://e-commerce-fullstack-1-7lha.onrender.com/",
