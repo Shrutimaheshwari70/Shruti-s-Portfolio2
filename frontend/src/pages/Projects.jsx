@@ -57,6 +57,17 @@ const Projects = forwardRef((props, ref) => {
       liveDemoUrl: "https://disability02.netlify.app/",
       gradient: "to-teal-500",
     },
+     {
+      id: 5,
+      title: "E-commerce App",
+      description:
+        "A full-featured E-commerce web application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js).",
+      tags: ["React.js","Mongodb","Express.js","Node.js","cloudinary","Multer" "Payment Gateway","HTML5", "Tailwind CSS", "JavaScript"],
+      image: "/images/project1.png",
+      codeUrl: "https://github.com/Shrutimaheshwari70/film-flicks-movie",
+      liveDemoUrl: "https://e-commerce-fullstack-1-7lha.onrender.com/",
+      gradient: "from-red-500 to-pink-500",
+    },
   ];
 
   const containerVariants = {
