@@ -8,7 +8,7 @@ const Projects = forwardRef((props, ref) => {
   const projects = [
     {
       id: 1,
-      title: "Film-flicks Movie App",
+      title: "Film-flicks Movie app",
       description: "Film-Flicks: Discover, explore, browse, and stream trending movies, shows, trailers, and exclusive content seamlessly.",
       tags: ["React.js", "HTML5", "Tailwind CSS", "JavaScript"],
       image: "/images/project1.png",
@@ -38,7 +38,7 @@ const Projects = forwardRef((props, ref) => {
     },
     {
       id: 4,
-      title: "Disability App",
+      title: "Disability website",
       description: "A physical or mental condition that significantly limits a person's movements, senses, communication, or daily life activities.",
       tags: ["React.js", "HTML5", "Tailwind CSS", "JavaScript"],
       image: "/images/project4.png",
