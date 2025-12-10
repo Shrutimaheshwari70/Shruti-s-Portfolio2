@@ -8,7 +8,7 @@ const Projects = forwardRef((props, ref) => {
   const projects = [
     {
       id: 1,
-      title: "Film-flicks Movie app",
+      title: "Film-flicks Movie App",
       description: "Film-Flicks: Discover, explore, browse, and stream trending movies, shows, trailers, and exclusive content seamlessly.",
       tags: ["React.js", "HTML5", "Tailwind CSS", "JavaScript"],
       image: "/images/project1.png",
